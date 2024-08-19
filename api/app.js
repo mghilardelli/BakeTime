@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 
 const appbakersRouter = require('./routes/appbakers');
 const pasteriesRouter = require('./routes/pastries');
+const aboutRouter = require('./routes/about');
 const {morganMiddleware, named} = require('./logger');
 const logger = named('app');
 
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/appbakers', appbakersRouter);
 app.use('/pastries', pasteriesRouter);
+app.use('/about', aboutRouter);
 
 app.listen(port, () => {
     logger.info(`BakeTime listening on port ${port}`)

@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/pages/home/HomePage.vue'
 import AppBakersListPage from '@/pages/app-bakers/AppBakersListPage.vue'
 import PastriesListPage from '@/pages/pastries/PastriesListPage.vue'
+import AboutPage from '@/pages/about/AboutPage.vue';
+
 
 const routes = [
   {
@@ -18,7 +20,12 @@ const routes = [
     path: '/pastries',
     name: 'pastries',
     component: PastriesListPage
-  }
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: AboutPage,
+  },
 ]
 
 const router = createRouter({

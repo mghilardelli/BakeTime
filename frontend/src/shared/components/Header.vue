@@ -8,6 +8,7 @@
     </div>
 
     <div class="header-right">
+      <RouterLink to="/about" class="nav-link">What's bakin'?</RouterLink>
       <RouterLink to="/appbakers" class="nav-link">AppBakers</RouterLink>
       <RouterLink to="/pastries" class="nav-link">Pastries</RouterLink>
     </div>
