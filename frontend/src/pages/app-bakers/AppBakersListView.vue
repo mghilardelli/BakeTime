@@ -3,8 +3,8 @@
     <div v-for="appBaker of appBakers" :key="appBaker.id" class="flex flex-row gap-2">
       <div>{{ appBaker.name }}</div>
       <div>{{ appBaker.quota }}</div>
-      <div>{{ appBaker.flavours.join(" | ") }}</div>
-      <div>{{ appBaker.pastries.map((e) => e.name).join(" | ") }}</div>
+      <div>{{ appBaker.flavours?.join(" | ") || 'No flavours available' }}</div>
+      <div>{{ appBaker.pastries?.map((e) => e.name).join(" | ") || 'No pastries available' }}</div>
     </div>
   </div>
 </template>
