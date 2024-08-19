@@ -1,26 +1,28 @@
 <template>
-  <div class="flex flex-col gap-2 grow">
-    <div v-for="pastry of pastries" :key="pastry.id" class="flex flex-row gap-2">
-      <div @click="selectPastry(pastry)" style="cursor: pointer" :class="{'bg-sbb-red border border-transparent text-white px-4 py-3 rounded-full': selectedPastry?.id === pastry.id}">{{ pastry.name }}</div>
-    </div>
-    <div class="flex flex-row gap-5 mt-5">
+  <div id="listView">
+    <div class="flex flex-col gap-2 grow">
+      <div v-for="pastry of pastries" :key="pastry.id" class="flex flex-row gap-2">
+        <div @click="selectPastry(pastry)" style="cursor: pointer" :class="{'bg-sbb-red border border-transparent text-white px-4 py-3 rounded-full': selectedPastry?.id === pastry.id}">{{ pastry.name }}</div>
+      </div>
+      <div class="flex flex-row gap-5 mt-5">
         <input v-model="newName" placeholder="New Pastry Name" class="text-black" />
         <PrimaryButton v-if="selectedPastry == null" :disabled="newName.length <= 0" @click="savePastry">Create</PrimaryButton>
-      <div v-else>
-        <PrimaryButton :disabled="newName.length <= 0" @click="updatePastry">Update</PrimaryButton>
-        <PrimaryButton @click="deletePastry">Delete</PrimaryButton>
+        <div v-else>
+          <PrimaryButton :disabled="newName.length <= 0" @click="updatePastry">Update</PrimaryButton>
+          <PrimaryButton @click="deletePastry">Delete</PrimaryButton>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import {type Ref, ref} from 'vue'
-import {AppContainerKey} from '@/core/container/app-container'
-import {injectStrict} from '@/core/container/inject'
-import {SavingState, useSaving} from '../../shared/functions/use-saving'
-import type {Pastry} from '@/core/models/pastry';
-import PrimaryButton from '@/shared/components/PrimaryButton.vue';
-import {ResponseState} from "@/core/use-cases/remote-use-case-proxy";
+import { type Ref, ref } from 'vue'
+import { AppContainerKey } from '@/core/container/app-container'
+import { injectStrict } from '@/core/container/inject'
+import { SavingState, useSaving } from '../../shared/functions/use-saving'
+import type { Pastry } from '@/core/models/pastry'
+import PrimaryButton from '@/shared/components/PrimaryButton.vue'
+import { ResponseState } from '@/core/use-cases/remote-use-case-proxy'
 
 const addPastryUseCase = injectStrict(AppContainerKey.addPastryUseCase)
 const updatePastryUseCase = injectStrict(AppContainerKey.updatePastryUseCase)
@@ -42,7 +44,6 @@ const savePastry = async () => {
     default:
       break;
   }
-  
 }
 
 const selectPastry = (pastry: Pastry) => {
