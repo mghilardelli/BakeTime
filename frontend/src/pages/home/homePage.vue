@@ -1,3 +1,3 @@
 <template>
-<div><img src="@/assets/bakingApps.png"></div>
+<div>Dashboard</div>
 </template>
