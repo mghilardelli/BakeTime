@@ -31,6 +31,11 @@ a,
   }
 
   #app {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+  #listView {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
