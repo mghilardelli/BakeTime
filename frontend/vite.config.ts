@@ -7,6 +7,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig(({ mode }) => {
   Object.assign(process.env, loadEnv(mode, process.cwd()))
   return {
+    base: 'BakeTime',
     plugins: [vue()],
     resolve: {
       alias: {
