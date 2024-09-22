@@ -27,6 +27,7 @@ jobs:
 
       - name: Install Packages  # Installs npm packages
         run: |
+          ls -l
           npm install
           npm list
 
