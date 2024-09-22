@@ -27,17 +27,17 @@ jobs:
 
       - name: Install Packages  # Installs npm packages
         run: |
-          npm ci
+          npm install
 
       - name: Build Application  # Builds the Vue.js application.
         run: |
           npm run build
 
-      - name: Configure vite
-        run: |
-          echo 'export default {
-            base: "/${{ github.event.repository.name }}/"
-          }' > vite.config.ts
+#      - name: Configure vite
+#        run: |
+#          echo 'export default {
+#            base: "/${{ github.event.repository.name }}/"
+#          }' > vite.config.ts
 
       - name: Setup Pages  # Configures pages for deployment.
         id: pages
