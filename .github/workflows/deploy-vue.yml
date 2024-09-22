@@ -28,11 +28,11 @@ jobs:
       - name: Install Packages  # Installs npm packages
         run: |
           npm install
+          npm list
 
       - name: Build Application  # Builds the Vue.js application.
         run: |
           npm run build
-
 #      - name: Configure vite
 #        run: |
 #          echo 'export default {
