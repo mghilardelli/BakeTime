@@ -25,9 +25,12 @@ jobs:
         with:
           node-version: 20.x
 
-      - name: Install Packages and Build Application  # Installs npm packages and builds the Vue.js application.
+      - name: Install Packages  # Installs npm packages
         run: |
           npm ci
+
+      - name: Build Application  # Builds the Vue.js application.
+        run: |
           npm run build
 
       - name: Setup Pages  # Configures pages for deployment.
