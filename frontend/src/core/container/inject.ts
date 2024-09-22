@@ -9,7 +9,7 @@ export function injectionKey<T>(): InjectionKey<T> {
 export function injectStrict<T>(key: InjectionKey<T>, fallback?: T) {
   const resolved = inject(key, fallback)
   if (typeof resolved === 'undefined' || resolved === null) {
-    throw new Error(`Injection failed: could not resolve ${key}`)
+    throw new Error(`Injection failed: could not resolve ${String(key)}`)
   }
 
   return resolved
